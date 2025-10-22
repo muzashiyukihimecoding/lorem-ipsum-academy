@@ -1,5 +1,3 @@
-import Header from "../components/Header";
-
 export default function Building_Mode() {
    return (
       <>

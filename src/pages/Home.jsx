@@ -1,10 +1,28 @@
 import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+   const images = [
+      "https://preview.redd.it/fixed-point-wallpaper-i-v0-rfgrlf3ssqca1.jpg?width=1920&format=pjpg&auto=webp&s=df89861e32748f84369c355d8a726cbf4c7ec690",
+      "https://preview.redd.it/ez3jaclqvew41.jpg?auto=webp&s=13d2ff93d910a29796064e16a6996e4350698f6f",
+      "https://a-static.besthdwallpaper.com/texas-exusiai-with-croissant-sora-arknights-anime-video-game-wallpaper-2560x2048-73770_33.jpg",
+   ];
+
+   const [current, setCurrent] = useState(0);
+
+   useEffect(() => {
+      const interval = setInterval(() => {
+         setCurrent((prev) => (prev + 1) % images.length);
+      }, 7000);
+
+      return () => clearInterval(interval);
+   }, [images.length]);
+
    return (
       <>
          <Header />
-         <div className="hero-container fade-up">
+         <div className="hero-container fade-up wrapper">
             <section className="hero-content">
                <div className="hero-text">
                   <h1>Work Excelent, Growth Incredible</h1>
@@ -42,30 +60,44 @@ export default function Home() {
 
                <div className="hero-image">
                   <img
-                     src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc"
-                     alt="Campuss"
+                     src={images[current]}
+                     alt="Hero Slide"
+                     className="fade-up"
+                     key={current}
                   />
-                  <div className="badge">🏅 Accredited </div>
+                  <div className="badge">🏅 Accredited Excellent </div>
                </div>
             </section>
 
             <section className="features">
                <div className="card">
-                  <div className="icon">📘</div>
+                  <img
+                     src="https://cdn-icons-png.flaticon.com/128/17884/17884538.png"
+                     alt=""
+                     className="icon"
+                  />
                   <div>
                      <h3>Innovative Curriculum</h3>
                      <p>Lorem</p>
                   </div>
                </div>
                <div className="card highlight">
-                  <div className="icon">📘</div>
+                  <img
+                     src="https://cdn-icons-png.flaticon.com/128/7576/7576803.png"
+                     alt=""
+                     className="icon"
+                  />
                   <div>
                      <h3>Modern Facility</h3>
                      <p>Lorem</p>
                   </div>
                </div>
                <div className="card">
-                  <div className="icon">📘</div>
+                  <img
+                     src="https://cdn-icons-png.flaticon.com/128/10433/10433136.png"
+                     alt=""
+                     className="icon"
+                  />
                   <div>
                      <h3>Expert Faculty</h3>
                      <p>Lorem</p>
@@ -88,11 +120,12 @@ export default function Home() {
                   </div>
                   <div className="cta">
                      <button className="btn-light">RSVP NOW</button>
-                     <span>Recruitment Due in 3 weeks</span>
+                     <span>Recruitment Due in 5 weeks</span>
                   </div>
                </section>
             </div>
          </div>
+         {/* <Footer /> */}
       </>
    );
 }

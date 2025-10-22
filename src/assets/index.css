@@ -148,7 +148,7 @@
 .btn-secondary {
    background: #fff;
    color: var(--text);
-   border: 2px solid var(--bor-1);
+   border: 0.5px solid var(--bor-1);
 }
 .btn-secondary:hover {
    background: var(--bg-4);
@@ -160,18 +160,21 @@
 }
 
 .hero-image img {
-   width: 100%;
+   width: 110%;
+   height: 100%;
    border-radius: 1rem;
-   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+   object-fit: cover;
+   /* animation: fadeIn 1.2s ease-in forwards; */
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .badge {
    position: absolute;
-   bottom: -10px;
+   bottom: -12px;
    right: -10px;
    background: var(--text);
    color: #fff;
-   padding: 0.5rem 1rem;
+   padding: 0.8rem 1.2rem;
    border-radius: 999px;
    font-size: 0.9rem;
    display: flex;
@@ -281,4 +284,68 @@
    font-size: 0.8rem;
    color: var(--col-4);
    margin-top: 0.3rem;
+}
+
+/* Footer */
+.footer {
+   width: 100%;
+   /* display: flex; */
+   background-color: var(--navbar);
+   padding: 5rem 10%;
+   color: var(--text);
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   position: sticky;
+   bottom: 0;
+   left: 0;
+   right: 0;
+}
+
+.footer-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, nimmax(220px, 1fr));
+   gap: 40px;
+}
+
+.footer h4 {
+   margin-bottom: 1rem;
+   font-weight: 600;
+}
+
+.footer ul {
+   list-style: none;
+   padding: 0;
+}
+
+.footer ul li {
+   margin-bottom: 10px;
+}
+
+.footer a {
+   color: var(--navlink);
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+.footer a:hover {
+   color: var(--text);
+}
+
+.social a {
+   margin-right: 12px;
+   font-size: 20px;
+   color: var(--navlink);
+   transition: transform 0.3s ease;
+}
+
+.social a:hover {
+   transform: translateY(-3px);
+   color: var(--text);
+}
+
+.footer-bottom {
+   border-top: 1px solid var(--bg-4);
+   text-align: center;
+   margin-top: 40px;
+   padding-top: 20px;
+   font-size: 14px;
 }
