@@ -1,90 +1,97 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
 export default function Footer() {
-   const footItems = [
-      { path: "/home", label: "Home" },
-      { path: "/about", label: "About" },
-      { path: "/student", label: "Student" },
-      { path: "/riic", label: "RIIC" },
-      { path: "/events", label: "Events" },
-      { path: "/contact", label: "Contact" },
-      { path: "/dashboard", label: "Dashboard" },
-   ];
    return (
-      <footer id="footer" className="footer">
+      <footer className="footer">
          <div className="footer-container">
-            <div className="footer-section brand">
-               <h3>Lorem Ipsum</h3>
-               <p>
-                  Rhodes Island<br>Terra, Arknights</br>
-               </p>
-               <div className="socials">
-                  <Link to="/">
-                     <i className="fab fa-twitter"></i>
-                  </Link>
-                  <Link to="/">
-                     <i className="fab fa-facebook"></i>
-                  </Link>
-                  <Link to="/">
-                     <i className="fab fa-instagram"></i>
-                  </Link>
-                  <Link to="/">
-                     <i className="fab fa-linkedin"></i>
-                  </Link>
+            <div>
+               <div className="footer-col">
+                  <h3>Lorem Ipsum Academy</h3>
+                  <p>Rhodes Island, Terra</p>
+                  <div className="footer-socials">
+                     <a href="#">
+                        <i className="fab fa-x-twitter"></i>
+                     </a>
+                     <a href="#">
+                        <i className="fab fa-instagram"></i>
+                     </a>
+                     <a href="#">
+                        <i className="fab fa-linkedin"></i>
+                     </a>
+                     <a href="#">
+                        <i className="fab fa-github"></i>
+                     </a>
+                  </div>
                </div>
             </div>
 
-            <div className="footer-section">
-               <h4>Our Links</h4>
-               <ul>
-                  <li>
-                     <Link to="/home">Home</Link>
-                  </li>
-                  <li>
-                     <Link to="/about">About</Link>
-                  </li>
-                  <li>
-                     <Link to="/students">Student</Link>
-                  </li>
-                  <li>
-                     <Link to="/RIIC">R.I.I.C.</Link>
-                  </li>
-                  <li>
-                     <Link to="/events">Events</Link>
-                  </li>
-               </ul>
-            </div>
+            <div className="footer-col-right">
+               <div className="footer-col">
+                  <h4>Useful Links</h4>
+                  <ul>
+                     <li>
+                        <a href="/home">Home</a>
+                     </li>
+                     <li>
+                        <a href="/about">About us</a>
+                     </li>
+                     <li>
+                        <a href="/students">Creator</a>
+                     </li>
+                     <li>
+                        <a href="/riic">Terms of Services</a>
+                     </li>
+                     <li>
+                        <a href="/contact">Privacy Policy</a>
+                     </li>
+                  </ul>
+               </div>
 
-            <div className="footer-section">
-               <h4>Our Services</h4>
-               <ul>
-                  <li>
-                     <Link to="/">Oripathy Medical</Link>
-                  </li>
-                  <li>
-                     <Link to="/">Battle Record Development</Link>
-                  </li>
-                  <li>
-                     <Link to="/">Operator Training</Link>
-                  </li>
-                  <li>
-                     <Link to="/">Precious Orundums</Link>
-                  </li>
-                  <li>
-                     <Link to="/">More</Link>
-                  </li>
-               </ul>
+               <div className="footer-col">
+                  <h4>Our Services</h4>
+                  <ul>
+                     <li>
+                        <a href="#">Terra Exploration</a>
+                     </li>
+                     <li>
+                        <a href="#">Oripathy Medical</a>
+                     </li>
+                     <li>
+                        <a href="#">Support and Training</a>
+                     </li>
+                     <li>
+                        <a href="">Product and Marketing</a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div className="footer-col">
+                  <h4>Extras</h4>
+                  <ul>
+                     <li>
+                        <a href="#">Documentation</a>
+                     </li>
+                     <li>
+                        <a href="#">Community</a>
+                     </li>
+                     <li>
+                        <a href="#">Official Website</a>
+                     </li>
+                     <li>
+                        <a href="#">Contact</a>
+                     </li>
+                  </ul>
+               </div>
             </div>
          </div>
 
          <div className="footer-bottom">
             <p>
-               $copyright 2025 <strong>Lorem Ipsum Academy, Terra</strong>. All
-               Rights Reserved
+               © 2025 <strong>Lorem Ipsum Academy</strong>. All Rights Reserved
             </p>
             <p>
-               Designed by <Link to="/">Muzashi Yukihime</Link>
+               Build by{" "}
+               <a href="https://github.com/muzashiyukihimecoding">
+                  MuzashiYukihime Code
+               </a>
             </p>
          </div>
       </footer>

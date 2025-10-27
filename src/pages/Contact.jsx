@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Building_Mode from "./BuildingMode";
 
 export default function Contact() {
@@ -6,6 +7,7 @@ export default function Contact() {
       <>
          <Header />
          <Building_Mode />
+         <Footer />
       </>
    );
 }

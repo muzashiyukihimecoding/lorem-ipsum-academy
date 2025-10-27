@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "./index.css";
+@import "tailwindcss";
 
 * {
    margin: 0;
@@ -8,11 +9,17 @@
    text-decoration: none;
 }
 
+html,
+body,
+#root {
+   height: 100%;
+}
 body {
    font-family: "Inter", "Poppins", sans-serif;
    background-color: var(--primary);
    color: var(--text);
    line-height: 1.6;
+   --webkit-font-smoothing: antialiased;
 }
 
 .wrapper {
@@ -25,7 +32,7 @@ body {
 .container {
    max-width: 1100px;
    margin: 0 auto;
-   padding: 0 2rem;
+   padding: 0 1rem;
 }
 
 .icon {
@@ -34,6 +41,23 @@ body {
    object-fit: contain;
 }
 
+.scroll-top {
+   position: fixed;
+   right: 30px;
+   bottom: 30px;
+   background: var(--logo);
+   color: #fff;
+   border: none;
+   padding: 12px;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+.scroll-top:hover {
+   background: #0077b6;
+}
+
+/* Fade-appear Animation */
 @keyframes slideUp {
    0% {
       opacity: 0;
@@ -46,15 +70,24 @@ body {
 }
 
 .fade-up {
-   animation: slideUp 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+   animation: slideUp 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
-.fade-up:nth-child(1) {
-   animation-delay: 0s;
+/* Responsive Display */
+@media (max-width: 1024px) {
+   .feature .card {
+      flex-direction: column;
+   }
+   .footer-top {
+      grid-template-columns: repeat(2, 1fr);
+   }
 }
-.fade-up:nth-child(2) {
-   animation-delay: 0.2s;
-}
-.fade-up:nth-child(3) {
-   animation-delay: 0.4s;
+
+@media (max-width: 720px) {
+   .wrapper {
+      height: 260px;
+   }
+   .footer-top {
+      grid-template-columns: 1fr;
+   }
 }
