@@ -1,5 +1,6 @@
 Lorem Ipsum Academy by Rhodes Island
-https://loremipsum-academy.vercel.app/
+
+| https://loremipsum-academy.vercel.app/ |
 
 # React + Vite
 
