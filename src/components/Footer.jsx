@@ -1,6 +1,6 @@
 export default function Footer() {
    return (
-      <footer className="footer">
+      <footer className="footer fade-up">
          <div className="footer-container">
             <div>
                <div className="footer-col">

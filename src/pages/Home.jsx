@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import EventBanner from "../components/EventBanner";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -154,27 +155,8 @@ export default function Home() {
                   </div>
                </div>
             </section>
-
-            <section className="banner fade-up">
-               <div className="open-rhodes">
-                  <div className="date-box">
-                     <h2>15</h2>
-                     <p>NOV</p>
-                  </div>
-                  <div className="info">
-                     <h3>Winter Rhodes Operator Recruitment</h3>
-                     <p>
-                        Join us to explore Terra, utilizy Originium resource,
-                        and learn about friendship opportunities
-                     </p>
-                  </div>
-                  <div className="cta">
-                     <button className="btn-light">RSVP NOW</button>
-                     <span>Recruitment Due in 5 weeks</span>
-                  </div>
-               </div>
-            </section>
          </div>
+         <EventBanner />
          <Footer />
       </>
    );

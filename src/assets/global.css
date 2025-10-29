@@ -2,6 +2,10 @@
 @import "./index.css";
 @import "tailwindcss";
 
+.light-background {
+   --bg-color: #e6edf0;
+}
+
 * {
    margin: 0;
    padding: 0;
@@ -14,6 +18,7 @@ body,
 #root {
    height: 100%;
 }
+
 body {
    font-family: "Inter", "Poppins", sans-serif;
    background-color: var(--primary);
@@ -23,7 +28,7 @@ body {
 }
 
 .wrapper {
-   min-height: 100%;
+   /* min-height: 100%; */
    /* padding: auto 10%; */
    display: flex;
    flex-direction: column;
@@ -32,13 +37,21 @@ body {
 .container {
    max-width: 1100px;
    margin: 0 auto;
-   padding: 0 1rem;
+   /* padding: 1rem 1rem; */
+}
+
+.section {
+   padding: 5rem 16%;
 }
 
 .icon {
    width: 48px;
    height: auto;
    object-fit: contain;
+}
+
+.subtitle {
+   color: var(--muted);
 }
 
 .scroll-top {
@@ -55,6 +68,42 @@ body {
 
 .scroll-top:hover {
    background: #0077b6;
+}
+
+.page-title {
+   color: var(--text2);
+   background: var(--bg-color);
+   padding: 1.5rem 16%;
+   position: relative;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.page-title h1 {
+   font-size: 24px;
+   font-weight: 700;
+}
+
+.page-title .breadcrumbs ol {
+   display: flex;
+   flex-wrap: wrap;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   font-size: 14px;
+   font-weight: 400;
+}
+
+.page-title .breadcrumbs ol li + li {
+   padding-left: 12px;
+}
+
+.page-title .breadcrumbs ol li + li::before {
+   content: "/";
+   display: inline-block;
+   padding-right: 12px;
+   color: color-mix(in srgb, var(--text2), transparent 70%);
 }
 
 /* Fade-appear Animation */

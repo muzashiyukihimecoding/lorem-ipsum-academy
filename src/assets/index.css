@@ -1,10 +1,12 @@
 /* Root Colours */
 :root {
-   --primary: #f1f5f9;
+   --primary: #f1f5f7;
    --navbar: #f8fafc;
    --navlink: #475569;
+   --banner: #011e2c;
    --logo: #1e293b;
    --text: #0f172a;
+   --text2: #010608;
    --muted: #64748b;
    --accent: #04415f;
    --hover: #334155;
@@ -13,6 +15,7 @@
    --bor-2: #3b82f6;
 }
 
+/* ------------------------------------------------- */
 /* Navbar */
 .navbar {
    width: 100%;
@@ -65,6 +68,7 @@
    transform: scaleX(0.5);
 }
 
+/* ------------------------------------------------- */
 /* Building Mode */
 .building-mode {
    height: 75vh;
@@ -73,6 +77,7 @@
    text-align: center;
 }
 
+/* ------------------------------------------------- */
 /* Main */
 .hero-container {
    background: var(--primary);
@@ -87,7 +92,7 @@
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
    /* display: flex; */
-   /* justify-content: space-between; */
+   /* justify-content: space-around; */
    gap: 3rem;
    align-items: center;
    max-width: 1100px;
@@ -164,7 +169,7 @@
 .hero-image img {
    width: 110%;
    height: 100%;
-   border-radius: 1rem;
+   border-radius: 12px;
    object-fit: cover;
    /* animation: fadeIn 1.2s ease-in forwards; */
    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
@@ -222,72 +227,421 @@
    font-size: 0.9rem;
 }
 
-/* Open Recruitment
-.banner {
-} */
-.open-rhodes {
-   background: var(--logo);
-   width: 100vw;
+/* ------------------------------------------------- */
+/* Event Banner - Home */
+.event-banner {
+   background: var(--banner);
    color: #fff;
-   margin-top: 5rem;
-   padding: 2rem 16%;
+   margin: 2rem 0;
+   width: 100vw;
+}
+
+.event-container {
+   padding: 1.5rem 16%;
+   /* width: 100vw; */
+}
+
+.event-banner .event-content {
    display: flex;
-   flex-wrap: wrap;
    justify-content: space-between;
+   flex-wrap: wrap;
    align-items: center;
-   gap: 2rem;
+   border-radius: 6px;
+   overflow: hidden;
 }
 
-.date-box {
+.event-banner .event-content > * {
+   position: relative;
+   z-index: 1;
+}
+
+.event-banner .event-content .event-date {
+   display: flex;
+   flex-direction: column;
    background: var(--accent);
-   padding: 1rem 2rem;
-   border-radius: 0.5rem;
+   color: #fff;
    text-align: center;
+   padding: 1rem 1.5rem;
+   border-radius: 0.5rem;
+   margin-right: 2rem;
+   min-width: 100;
+   .day {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+   }
+   .month {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+   }
 }
 
-.date-box h2 {
-   font-size: 2rem;
-   font-weight: 700;
+.event-banner .event-content .event-info {
+   flex: 1;
+   margin-right: 2rem;
+   h3 {
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 10px;
+      font-weight: 700;
+   }
+   p {
+      font-size: 1rem;
+      margin: 0;
+   }
 }
 
-.info {
-   max-width: 500px;
-}
-
-.info h3 {
-   font-size: 1.3rem;
-   font-weight: 700;
-   margin-bottom: 0.5rem;
-}
-
-.info p {
-   color: var(--bor-1);
-   font-size: 0.9rem;
-}
-
-.cta {
+.event-banner .event-content .event-action {
    display: flex;
    flex-direction: column;
    align-items: center;
 }
 
-.btn-light {
-   background: #fff;
-   color: var(--text);
+.event-banner .event-content .event-action .btn-event {
+   background: var(--accent);
+   color: #fff;
+   padding: 12px 2rem;
+   border-radius: 0.5rem;
    font-weight: 600;
-   border: none;
+   display: inline-block;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   margin-bottom: 12px;
+   transition: all 0.3s ease;
 }
 
-.btn-light:hover {
-   background: var(--primary);
+.event-banner .event-content .event-action .btn-event:hover {
+   background: color-mix(in srgb, var(--accent), transparent 15%);
 }
 
-.cta span {
+/* ------------------------------------------------- */
+/* Students Page */
+.academy-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 3rem;
+   align-items: center;
+   margin-bottom: 3rem;
+}
+
+.academy-image img {
+   width: 100%;
+   border-radius: 12px;
+   box-shadow: 0 10px 1.5rem rgba(0, 0, 0, 0.05);
+}
+
+.academy-text h2 {
+   font-size: 1.75rem;
+   font-weight: 450;
+   position: relative;
+   margin-bottom: 1rem;
+}
+
+.academy-text h2:after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: -4px;
+   width: 60px;
+   height: 3px;
+   background: var(--accent);
+   border-radius: 999px;
+}
+
+.academy-text p {
+   color: var(--muted);
+   margin-bottom: 1rem;
+   line-height: 1.6;
+}
+
+.academy-text .btn-outline {
+   border: 1.5px solid var(--accent);
+   border-radius: 0.4rem;
+   padding: 0.6rem;
+   color: var(--accent);
+   background: transparent;
+   transition: 0.25s ease;
+}
+
+.academy-text .btn-outline:hover {
+   background: var(--accent);
+   color: #fff;
+}
+
+/* Student Extras */
+.extras-section {
+   display: flex;
+   flex-direction: column;
+   /* text-align: center; */
+}
+
+.extras-title {
+   text-align: center;
+   font-size: 1.5rem;
+   margin: 3rem 0;
+   position: relative;
+   display: inline-block;
+}
+
+.extras-title::after {
+   content: "";
+   position: absolute;
+   left: 50%;
+   bottom: -4px;
+   transform: translateX(-50%);
+   width: 10%;
+   height: 3px;
+   background: var(--accent);
+   border-radius: 999px;
+}
+
+.extras-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+   gap: 1.5rem;
+}
+
+.extras-card {
+   background: #fff;
+   border-radius: 12px;
+   padding: 1.5rem;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+   transition: 0.2s ease-out;
+}
+
+.extras-card:hover {
+   transform: translateY(-4px);
+   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.extras-icon {
+   font-size: 1.5rem;
+   background: color-mix(in srgb, var(--accent), transparent 90%);
+   width: 3rem;
+   height: 3rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 1rem;
+   padding: 0.5rem;
+   border-radius: 50%;
+}
+
+.extras-card h4 {
+   margin-bottom: 0.5rem;
+   color: var(--text);
+}
+
+.extras-card p {
+   font-size: 0.95rem;
+   color: var(--muted);
+   line-height: 1.5;
+   margin-bottom: 1rem;
+}
+
+.tag {
+   display: inline-block;
+   background: var(--accent);
+   opacity: 0.75;
+   color: #fff;
+   padding: 0.3rem 0.8rem;
+   border-radius: 999px;
+   font-size: 0.5rem;
+   margin-right: 0.5rem;
+}
+
+@media (max-width: 960px) {
+   .academy-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+   }
+   .academy-text {
+      order: 2;
+   }
+   .academy-image {
+      order: 1;
+   }
+}
+
+/* Students Division */
+.student-section {
+   text-align: center;
+   /* margin: 5rem auto; */
+   /* margin-bottom: 5rem; */
+   padding: 0 16%;
+}
+
+.student-carousel {
+   /* overflow-x: auto; */
+   overflow: hidden;
+   scroll-behavior: smooth;
+   width: 100%;
+   position: relative;
+}
+
+.student-track {
+   display: flex;
+   transition: transform 0.8s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.student-card {
+   flex: 0 0 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 2rem auto;
+}
+
+.student-card img {
+   width: 800px;
+   height: 460px;
+   object-fit: cover;
+   border-radius: 1rem;
+   /* background: #fff; */
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+   margin-bottom: 1rem;
+}
+
+.student-card h3 {
+   font-size: 1.2rem;
+   color: var(--text2);
+}
+
+.student-card p {
+   font-size: 0.95rem;
+   color: var(--muted);
+}
+
+.dot {
+   height: 0.5rem;
+   width: 0.5rem;
+   margin: 0 4px;
+   background-color: #bbb;
+   border-radius: 50%;
+   display: inline-block;
+   transition: background-color 0.3s;
+   cursor: pointer;
+}
+
+.dot.active {
+   background-color: var(--accent);
+}
+
+/* Service-Link */
+.service-link {
+   display: inline-flex;
+   color: var(--accent);
+   font-weight: 400;
+   font-size: 0.75rem;
+   align-items: center;
+   text-decoration: none;
+   transition: all 0.2s ease;
+}
+
+.service-link span {
+   margin-left: 5px;
+   transition: all 0.3s ease;
+}
+
+.service-link:hover {
+   color: color-mix(in srgb, var(--accent), transparent 25%);
+}
+
+.service-link:hover span {
+   transform: translateX(5px);
+}
+
+/* CTA Banner */
+.cta-section {
+   margin: 0 16%;
+   margin-bottom: 3rem;
+   /* padding: 1.5rem; */
+   max-width: 1100px;
+}
+
+.cta-container {
+   background-color: var(--bor-1);
+   border-radius: 0.6rem;
+   padding: 2rem 2.5rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   /* flex-wrap: wrap; */
+   gap: 1.5rem;
+}
+
+.cta-text {
+   flex: 1 1 60%;
+}
+
+.cta-text h3 {
+   font-size: 1.8rem;
+   font-weight: 700;
+   color: var(--text);
+   margin-bottom: 0.5rem;
+}
+
+.cta-text p {
+   color: var(--hover);
+   font-size: 0.95rem;
+   line-height: 1.6;
+}
+
+.cta-buttons {
+   display: flex;
+   gap: 8px;
+   flex-shrink: 0 wrap;
+}
+
+.cta-btn-primary {
+   background-color: var(--accent);
+   color: #fff;
+   border-radius: 0.4rem;
+   padding: 0.6rem 1.2rem;
+   font-weight: 400;
    font-size: 0.8rem;
-   color: var(--col-4);
-   margin-top: 0.3rem;
+   transition: background 0.3s ease, transform 0.2s ease;
+   cursor: pointer;
 }
 
+.cta-btn-primary:hover {
+   background-color: var(--logo);
+   transform: translateY(-2px);
+}
+
+.cta-btn-secondary {
+   background-color: transparent;
+   color: var(--accent);
+   border: 1px solid var(--accent);
+   border-radius: 0.4rem;
+   padding: 0.6rem 1.2rem;
+   font-weight: 400;
+   font-size: 0.8rem;
+   transition: background 0.3s ease, transform 0.2s ease;
+   cursor: pointer;
+}
+
+.cta-btn-secondary:hover {
+   background-color: var(--accent);
+   color: #fff;
+   transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+   .cta-container {
+      flex-direction: column;
+      text-align: center;
+   }
+   .cta-text {
+      flex: none;
+   }
+   .cta-buttons {
+      justify-content: center;
+   }
+}
+
+/* ------------------------------------------------- */
 /* Footer */
 .footer {
    background: var(--bor-1);
