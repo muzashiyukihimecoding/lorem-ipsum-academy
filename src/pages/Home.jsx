@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import EventBanner from "../components/EventBanner";
+import EventsFilter from "../components/EventFilter";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -157,6 +158,105 @@ export default function Home() {
             </section>
          </div>
          <EventBanner />
+
+         <section className="program-section">
+            <div className="core-values">
+               <h2 className="section-title">Core Values</h2>
+               <div className="values-grid">
+                  <div className="value-card">
+                     <div className="icon">📕</div>
+                     <h4>Knowledge & Precision</h4>
+                     <p>
+                        We value discipline, clarity, and continous learning.
+                     </p>
+                  </div>
+                  <div className="value-card">
+                     <div className="icon">🤝</div>
+                     <h4>Collaboration</h4>
+                     <p>
+                        Students, Medics, and Scientists work hand-in-hand for
+                        progress.
+                     </p>
+                  </div>
+                  <div className="value-card">
+                     <div className="icon">⚙️</div>
+                     <h4>Innovation</h4>
+                     <p>
+                        Advancing Originium research through practical
+                        breakthrough
+                     </p>
+                  </div>
+                  <div className="value-card">
+                     <div className="icon">🌏</div>
+                     <h4>Humanitarian Vision</h4>
+                     <p>
+                        Healing Terra, protecting the world from within and
+                        beyond.
+                     </p>
+                  </div>
+               </div>
+            </div>
+
+            <div className="featured-programs">
+               <h2 className="section-title">Featured Programs</h2>
+               <p className="subtitle">
+                  Discover the leading division of Lorem Ipsum Academy
+               </p>
+
+               <div className="featured-content">
+                  <div className="main-card">
+                     <img
+                        src="https://arknights.wiki.gg/images/RI_Landship_2.png?bf8bb6"
+                        alt="Rhodes Island Landship"
+                     />
+                     <div className="main-card-body">
+                        <span className="tag">Popular</span>
+                        <h3>Engineering & Originium Tech</h3>
+                        <p>250+ Students · 89% Field Success Rate</p>
+                        <p className="desc">
+                           Study advanced Originium device design and combat
+                           engineering used in operations across Terra.
+                        </p>
+                        <button>Discover Program</button>
+                     </div>
+                  </div>
+
+                  <div className="side-list">
+                     {[
+                        {
+                           title: "Combat Tactics",
+                           sub: "3 Years · Operation Training",
+                        },
+                        {
+                           title: "Medical Research",
+                           sub: "4 Years · Field Medicine",
+                        },
+                        {
+                           title: "Pharmaceutical Sciences",
+                           sub: "3 Years · Oripathy Studies",
+                        },
+                        {
+                           title: "Psychological Support",
+                           sub: "2 Years · Certification",
+                        },
+                        {
+                           title: "Logistics & Support",
+                           sub: "2 Years · Command Track",
+                        },
+                     ].map((item, i) => (
+                        <div className="side-card" key={i}>
+                           <div className="side-card-content">
+                              <h4>{item.title}</h4>
+                              <p>{item.sub}</p>
+                           </div>
+                           <span className="arrow">→</span>
+                        </div>
+                     ))}
+                  </div>
+               </div>
+            </div>
+         </section>
+         <EventsFilter />
          <Footer />
       </>
    );
