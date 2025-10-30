@@ -717,7 +717,7 @@
    max-width: 1200px;
    margin: 0 auto;
    gap: 2rem;
-   align-items: flex-start;
+   align-items: center;
 }
 
 .map {

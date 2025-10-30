@@ -8,7 +8,7 @@ export default function Contact() {
       <>
          <Header />
          <PageTitle title="Contact Us" />
-         <section class="contact">
+         <section class=" contact">
             <div class="contact-wrapper ">
                <div class="map fade-up">
                   <iframe
