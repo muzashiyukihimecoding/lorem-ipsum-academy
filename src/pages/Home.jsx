@@ -137,7 +137,7 @@ export default function Home() {
                      <h3>Research Integration</h3>
                      <p>
                         Students collaborate in Originium reserve and field
-                        trials for developing new cures and technologies.
+                        trials for developing new cures throughout technologies.
                      </p>
                   </div>
                </div>
